@@ -1,0 +1,26 @@
+{
+	"image": "mcr.microsoft.com/vscode/devcontainers/base:jammy",
+	"features": {
+		"ghcr.io/devcontainers/features/nix:1": {
+			"extraNixConfig": "experimental-features = nix-command flakes,accept-flake-config = true,trusted-users = root vscode"
+		},
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"configureZshAsDefaultShell": true
+		},
+		"ghcr.io/devcontainers-contrib/features/elixir-asdf:2": {}
+	},
+	"mounts": [
+		"source=nix,target=/nix,type=volume"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"jnoortheen.nix-ide",
+				"yzhang.markdown-all-in-one",
+				"hbenl.vscode-test-explorer",
+				"sonarsource.sonarlint-vscode",
+				"esbenp.prettier-vscode"
+			]
+		}
+	}
+}
